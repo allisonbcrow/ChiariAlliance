@@ -34,7 +34,8 @@ constructor(props){
     })
       .then((response) => response.json())
       .then((data) => {
-        this.props.updateToken(data.sessionToken);
+        console.log(data)
+        // this.props.updateToken(data.sessionToken);
         localStorage.setItem("firstName", this.state.firstName)
       });
   };

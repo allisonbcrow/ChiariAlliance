@@ -1,33 +1,76 @@
-.App {
-  text-align: center;
-}
-
-/* body */
-body {
-  padding: 15px;
-  color: red;
-  font: Belleza;
+.div {
+  background-image: url("C:\Users\13176\Desktop\WD89Red\ChiariAlliance\red-badge-client-main\chiari-alliance\src\purplebackground.jpeg");
+  background-repeat: repeat-y;
+  background-size: 110%;
+  background-position: center;
 }
 
 /* footer */
 footer {
-  background-color: #53565A;
+  background-color: #7954a1;
   color: white;
   margin-top: 10px;
+  font-family: 'Patrick Hand', cursive;
 }
 
 footer p {
+  text-shadow: 1px -1px  black;
+  color: white;
   margin-top: 0.8em!important;
-  margin-left: 1.5em;
+  margin-left: 2.5em;
+  text-transform: uppercase;
+  background: none;
 }
 
 /* main */
 .main {
-  background-color: white;
+  background-image: url("C:\Users\13176\Desktop\WD89Red\ChiariAlliance\red-badge-client-main\chiari-alliance\src\purplebackground.jpeg");
+  background-repeat: repeat-y;
+  background-size: 110%;
+  background-position: center;
   color: black;
   height: 100%;
   min-height: 100%;
 }
+
+header {
+  margin-bottom: 70px ;
+}
+
+button.nav-button.btn.btn-primary {
+  background-color: #C55FFC;
+  border: 2px solid black;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  transition-duration: 0.2s;
+}
+
+button.nav-button.btn.btn-primary:hover {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #C55FFC;
+  color: #C55FFC;
+  margin: 1px;
+  text-align: center;
+}
+
+button.btn.btn-secondary {
+  background-color: #C55FFC;
+  border: 2px solid black;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  transition-duration: 0.2s;
+}
+
+button.btn.btn-secondary:hover  {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #C55FFC;
+  color: #C55FFC;
+  margin: 1px;
+  text-align: center;
+}
+
 
 .mainDiv {
   margin: auto;
@@ -35,47 +78,98 @@ footer p {
   padding: 5px;
 }
 
-.sidebar {
-  display: flex; 
-  background-color: #53565A;
-  margin-top: 10px;
+
+h1 {
+  font-family: 'Corben', cursive;
+  text-align: center;
+  color: #C55FFC;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  
+}
+
+h3 {
+  font-family: 'Corben', cursive;
+  text-align: center;
+  color: #C55FFC;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+a:link, a:visited  {
+  font-family: 'Corben', cursive;
+  text-align: center;
+  text-decoration: none;
+  color: #C55FFC;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+
+a:hover {
+  font-family: 'Corben', cursive;
+  text-align: center;
+  text-decoration: none;
+  color: white;
+  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+}
+
+label {
+  font-family: 'Patrick Hand', cursive;
+  text-align: center;
+  color: black;
+  text-shadow: 1px 1px 2px #EFDCF9;
+  
+}
+
+input.form-control {
+  width: 80%;
+  background-color: #EFDCF9;
+}
+
+p {
+  font-family: 'Patrick Hand', cursive;
+  text-align: center;
+  color: black;
+  text-shadow: 1px 1px 2px #EFDCF9;
+  background-color: #c55ffc6d;
 }
 
 ul {
-  list-style-type: none;
+  font-family: 'Patrick Hand', cursive;
+ color: black;
+ text-shadow: 1px 1px 2px #EFDCF9;
+ background-color: #c55ffc6d;
 }
 
-/* Sidebar */
-.sidebar-list-styling{
-  padding-left: 50px;
-  padding-top: 15px;
-  width: 20%;
-  background-color: #53565A;
-  color: white;
+th {
+  font-family: 'Patrick Hand', cursive;
+ color: black;
+ background-color: #7954a1;
 }
 
-.sidebar-list a{
-  color: white;
-  padding: 0;
-}
-
-.sidebar-route {
-  flex: 1;
-  padding: '00px';
-}
-
-/* header */
-.header {
-  margin-top: 0.5em!important;
+div.form-group {
+  font-family: 'Patrick Hand', cursive;
   text-align: center;
-  background-color: #53565A;
-  color: white;
+  color: black;
+  text-shadow: 1px 1px 2px #EFDCF9;
 }
 
-.header a {
-  color: white;
+button.btn.btn-primary:hover {
+  background-color: rgb(255, 255, 255);
+  border: 2px solid #C55FFC;
+  color: #C55FFC;
+  margin: 1px;
+  text-align: center;
 }
 
-.header p {
-  margin-top: 0.8em!important;
+button.btn.btn-primary {
+  background-color: #C55FFC;
+  border: 2px solid black;
+  color: white;
+  margin: 1px;
+  text-align: center;
+  transition-duration: 0.2s;
+}
+
+input#other.form-control {
+  height: 10em;
+  width: 25em;
 }

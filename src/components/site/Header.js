@@ -31,8 +31,12 @@ const Header = (props) => {
  
           </Nav> */}
           <Nav className="ml-auto right-options" navbar>
+            
             <NavItem className="nav-right">
               <Button onClick={()=>routeChange('/')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Home</Button>
+            </NavItem>
+            <NavItem className="nav-right">
+              <Button onClick={()=>routeChange('/daily/mine')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Daily Index</Button>
             </NavItem>
                         <NavItem className="nav-right">
               <Button onClick={()=>routeChange('/resources')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Resources</Button>
@@ -44,7 +48,7 @@ const Header = (props) => {
               <Button onClick={()=>routeChange('/register')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Create</Button>
             </NavItem>
             <NavItem className="nav-right">
-              <Button onClick={()=>routeChange('/logout')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Log Out</Button>
+              <Button onClick={props.clearToken} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Log Out</Button>
             </NavItem>
         </Nav>
       </Collapse>

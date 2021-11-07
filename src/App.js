@@ -6,6 +6,12 @@ import Footer from './components/site/Footer';
 import Sidebar from './components/site/Sidebar.js';
 import Auth from './auth/Auth';
 import DailyIndex from './daily/DailyIndex';
+import Home from './components/site/Home';
+import {
+  Route,
+  Link,
+  Switch
+} from 'react-router-dom'
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
@@ -27,20 +33,11 @@ function App() {
     setSessionToken("");
   };
 
-  const protectedViews = () => {
-    return sessionToken === localStorage.getItem("token") ? (
-      <DailyIndex clearToken={clearToken} token={sessionToken} />
-    ) : (
-      <Auth updateToken={updateToken} />
-    );
-  };
 
   return (
     <div>
-        <Header clickLogout={clearToken}/>
-          <Sidebar clearToken={clearToken}/>
-        {protectedViews()}
-      
+        <Header clearToken={clearToken}/>
+          <Sidebar updateToken={updateToken} token={sessionToken} clearToken={clearToken}/>
         <Footer />
         </div>
         );

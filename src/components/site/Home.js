@@ -1,7 +1,9 @@
 import React from "react";
 
-const Home = () => {
+
+const Home = (props) => {
   return (
+   
     <div className="main">
       <div className="mainDiv">
         <h1>Welcome to Chiari Alliance</h1>
