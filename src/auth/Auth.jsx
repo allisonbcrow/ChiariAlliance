@@ -10,7 +10,7 @@ class Auth extends Component {
   return (
     <div>
         <Route exact path="/login">
-          <Login updateToken={this.props.updateToken} />
+          <Login updateToken={this.props.updateToken} updateFirstName={this.props.updateFirstName}/>
         </Route>
         <Route exact path="/register">
           <Register updateToken={this.props.updateToken} />

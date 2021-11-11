@@ -10,7 +10,7 @@ import {
 export default class Register extends React.Component {
 constructor(props){
     super(props);
-    this.state = {firstName:'', lastName:'', role:'', email:'', password:''}
+    this.state = {firstName:'', lastName:'', isAdmin: false, email:'', password:''}
 }
 
 
@@ -23,7 +23,7 @@ constructor(props){
         user: {
           firstName: this.state.firstName,
           lastName: this.state.lastName,
-          role: this.state.role,
+          isAdmin: this.state.isAdmin,
           email: this.state.email,
           password: this.state.password
         },
@@ -32,11 +32,19 @@ constructor(props){
         "Content-Type": "application/json",
       }),
     })
-      .then((response) => response.json())
+      .then((res) => {
+        if (!res.ok) {
+          alert(
+            'User already exists under that email. Please log in to your account by clicking "Login" '
+          );
+        }
+        return res.json();
+      })
       .then((data) => {
         console.log(data)
-        // this.props.updateToken(data.sessionToken);
+        this.props.updateToken(data.sessionToken);
         localStorage.setItem("firstName", this.state.firstName)
+        localStorage.setItem("isAdmin", this.state.isAdmin)
       });
   };
 
@@ -54,9 +62,19 @@ render() {
             <Input onChange={(e) => this.setState({lastName: e.target.value}) } name="lastname" placeholder="Last Name" value={this.state.lastName} required/> 
         </FormGroup>
         <FormGroup>
-            <Label htmlFor="role">Role</Label>
-            <Input onChange={(e) => this.setState({role: e.target.value}) } name="role" placeholder="Role" value={this.state.role} required/> 
-        </FormGroup>
+            <Label for="isAdmin">Role</Label>
+            <Input
+              type="select"
+              name="isAdmin"
+              id="isAdmin"
+              onChange={this.handleChange}
+              placeholder="Select your role"
+            >
+              <option></option>
+              <option value="Patient">Patient</option>
+              <option value="Admin">Admin</option>
+            </Input>
+          </FormGroup>
         <FormGroup>
             <Label htmlFor="email">Email</Label>
             <Input onChange={(e) => this.setState({email: e.target.value}) } name="email" placeholder="Email" value={this.state.email} required/> 
