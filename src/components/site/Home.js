@@ -14,6 +14,7 @@ const Home = (props) => {
           understanding the conditions and making the best treatment and
           lifestyle decisions.
         </p>
+        <p> Register or Login for a tracker to be able to keep records of your daily routine (water, exercise, mood, etc) and your medical information (medications, surgeries, allergies, etc.) </p>     
         <hr />
         <h1>key-ar-ee mal-for-may-shn</h1>
         <p>Chiari Malformation is a serious neurological disorder where the bottom part of the brain, the cerebellum, descends out of the skull and crowds the spinal cord, putting pressure on both the brain and spine and causing many symptoms.</p>

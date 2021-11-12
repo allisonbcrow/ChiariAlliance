@@ -24,32 +24,47 @@ const Header = (props) => {
     return (
         <header>
         <Navbar fixed={"top"} color="faded" light expand="md">
-          {/* <NavbarBrand href="/home"><img src={BrandLogo} alt="logo" style={{width: 200}} /></NavbarBrand> */}
           <NavbarToggler onClick={toggle} />
           <Collapse isOpen={isOpen} navbar>
-          {/* <Nav className="ml-auto center-option" navbar>
- 
-          </Nav> */}
           <Nav className="ml-auto right-options" navbar>
+
+<div>
+            <NavItem className="nav-right">
+              <Button onClick={()=>routeChange('/')} color="primary" className="nav-button">Home</Button>
+            </NavItem>
+            <NavItem className="nav-right">
+              <Button onClick={()=>routeChange('/resources')} color="primary" className="nav-button" >Resources</Button>
+            </NavItem>
+            </div>
+
+            {props.token === localStorage.getItem("token")? (
+              
+              <div>
+            <NavItem className="nav-right">
+              <Button onClick={()=>routeChange('/daily/mine')} color="primary" className="nav-button" >Daily Journal</Button>
+            </NavItem>
+            <NavItem className="nav-right">
+              <Button onClick={()=>routeChange('/medical/mine')} color="primary" className="nav-button" >Medical Journal</Button>
+            </NavItem>
+            {/* <NavItem className="nav-right">
+              <Button onClick={()=>routeChange('/daily/all')} color="primary" className="nav-button" >Admin Only</Button>
+            </NavItem> */}
+            </div>
             
+ ):(
+  <></>
+  )}
+  <div>
             <NavItem className="nav-right">
-              <Button onClick={()=>routeChange('/')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Home</Button>
-            </NavItem>
-            <NavItem className="nav-right">
-              <Button onClick={()=>routeChange('/daily/mine')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Daily Index</Button>
-            </NavItem>
-                        <NavItem className="nav-right">
-              <Button onClick={()=>routeChange('/resources')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Resources</Button>
+              <Button onClick={()=>routeChange('/login')} color="primary" className="nav-button" >Login</Button>
             </NavItem>
             <NavItem className="nav-right">
-              <Button onClick={()=>routeChange('/login')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Login</Button>
+              <Button onClick={()=>routeChange('/register')} color="primary" className="nav-button" >Register</Button>
             </NavItem>
             <NavItem className="nav-right">
-              <Button onClick={()=>routeChange('/register')} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Create</Button>
+              <Button onClick={props.clearToken} color="primary" className="nav-button" >Log Out</Button>
             </NavItem>
-            <NavItem className="nav-right">
-              <Button onClick={props.clearToken} color="primary" className="nav-button" style={{color: "#0086c3", backgroundColor:"#ffffff"}}>Log Out</Button>
-            </NavItem>
+            </div>
         </Nav>
       </Collapse>
    </Navbar>

@@ -4,17 +4,15 @@ import './App.css';
 import Header from './components/site/Header';
 import Footer from './components/site/Footer';
 import Sidebar from './components/site/Sidebar.js';
-import Auth from './auth/Auth';
 import DailyIndex from './daily/DailyIndex';
-import Home from './components/site/Home';
-import {
-  Route,
-  Link,
-  Switch
-} from 'react-router-dom'
+import Auth from './auth/Auth';
+
+
 
 function App() {
   const [sessionToken, setSessionToken] = useState("");
+
+  const firstName = localStorage.getItem("firstName");
 
   useEffect(() => {
     if (localStorage.getItem("token")) {
@@ -33,11 +31,19 @@ function App() {
     setSessionToken("");
   };
 
+  const protectedView = () => {
+    return sessionToken === localStorage.getItem("token")  ? (
+        <Header clearToken={clearToken} token={sessionToken} />
+    ) : (
+      <Auth updateToken={updateToken} clearToken={clearToken} />
+    );
+  };
 
   return (
     <div>
-        <Header clearToken={clearToken}/>
-          <Sidebar updateToken={updateToken} token={sessionToken} clearToken={clearToken}/>
+        <Header clearToken={clearToken} token={sessionToken}/>
+          <Sidebar token={sessionToken} clearToken={clearToken}/>
+          {protectedView()}
         <Footer />
         </div>
         );

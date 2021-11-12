@@ -1,70 +1,12 @@
-# Getting Started with Create React App
+Chiari Alliance
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mission Statement
 
-## Available Scripts
+Chiari malformation is a problem in which a part of the brain (the cerebellum) at the back of the skull bulges through a normal opening in the skull where it joins the spinal canal. This puts pressure on parts of the brain and spinal cord, and can cause mild to severe symptoms. The prevalence in the general population has been estimated at slightly less than one in one thousand people. The majority of these cases however are asymptomatic. Chiari is often detected by accident among patients who have undergone diagnostic imaging for unrelated reasons.
 
-In the project directory, you can run:
+Because of the rarity of the disorder, but the severity and importance, Chiari Alliance will be a website created for people with Chiari Malformation to not only find resources for help, but also to track symptoms, mood, sleep, etc. and important information that could help track patterns and help keep track of information useful for medical records, medication, medical history, previous surgeries and hospitalizations, etc. I want to make it a journal useful for people with Chiari, but also list some resources for those newly diagnosed.
 
-### `npm start`
+The reasoning behind my choice is someone with a chronic illness can get quickly flustered with loads of information. Especially when dealing with a new diagnosis. It’s important to be able to track all of your information somewhere safe and be able to pull it up when needed. I have a note in my phone that I try to keep up to date with Doctors and their phone number, current medications, medical history, etc. I want this website to be more specific and possible for someone to access. It can be nearly impossible to recall it all from memory.  The tracking mood, sleep, food, etc. can be important in noticing patterns and relaying those back to a doctor. The resources can be useful in finding extra support or information on Chiari. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Dependencies used: 
+React Legacy, ReactStrap, PostreSQL, Sequelize, Git, Heroku

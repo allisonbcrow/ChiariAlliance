@@ -13,6 +13,11 @@ footer {
   font-family: 'Patrick Hand', cursive;
 }
 
+tr {
+  background-color: #7954a1;
+}
+
+
 footer p {
   text-shadow: 1px -1px  black;
   color: white;
@@ -34,15 +39,15 @@ footer p {
 }
 
 header {
-  margin-bottom: 70px ;
+margin: 7em;
 }
+
 
 button.nav-button.btn.btn-primary {
   background-color: #C55FFC;
   border: 2px solid black;
   color: white;
   margin: 1px;
-  text-align: center;
   transition-duration: 0.2s;
 }
 
@@ -120,7 +125,12 @@ label {
 }
 
 input.form-control {
-  width: 80%;
+  /* width: 80%; */
+  background-color: #EFDCF9;
+}
+
+select.form-control {
+  /* width: 80%; */
   background-color: #EFDCF9;
 }
 
@@ -129,28 +139,58 @@ p {
   text-align: center;
   color: black;
   text-shadow: 1px 1px 2px #EFDCF9;
-  background-color: #c55ffc6d;
+  background-color: #ffffff6d;
+}
+
+li {
+  font-family: 'Patrick Hand', cursive;
+ 
+  color: black;
+  
+  background-color: #ffffff6d;
 }
 
 ul {
   font-family: 'Patrick Hand', cursive;
  color: black;
- text-shadow: 1px 1px 2px #EFDCF9;
- background-color: #c55ffc6d;
+ /* text-shadow: 1px 1px 2px #EFDCF9; */
+ background-color: #ffffff6d;
+ 
 }
 
-th {
-  font-family: 'Patrick Hand', cursive;
- color: black;
- background-color: #7954a1;
-}
 
 div.form-group {
   font-family: 'Patrick Hand', cursive;
   text-align: center;
+  margin: auto;
   color: black;
   text-shadow: 1px 1px 2px #EFDCF9;
 }
+
+td {
+  font-family: 'Patrick Hand', cursive;
+  text-align: center;
+  margin: auto;
+  color: black;
+  text-shadow: 1px 1px black;
+
+}
+ tr {
+   color: black;
+   font-family: 'Patrick Hand', cursive;
+   font-size: 100%;
+ }
+
+th {
+  font-family: 'Patrick Hand', cursive;
+  text-align: center;
+  margin: auto;
+  color: black;
+  margin: auto;
+  background-color: #ffffff6d;
+}
+
+
 
 button.btn.btn-primary:hover {
   background-color: rgb(255, 255, 255);
@@ -164,12 +204,9 @@ button.btn.btn-primary {
   background-color: #C55FFC;
   border: 2px solid black;
   color: white;
-  margin: 1px;
-  text-align: center;
+  margin: 5px;
+  margin-left: 33%;
+  margin-top: 10%;
+display: flex;
   transition-duration: 0.2s;
-}
-
-input#other.form-control {
-  height: 10em;
-  width: 25em;
 }

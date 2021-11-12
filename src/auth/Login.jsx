@@ -7,6 +7,7 @@ export default class Login extends React.Component {
         this.state = {name:'', email:'', password:'', isAdmin: false}
     }
 
+    
 handleSubmit = (e) => {
     e.preventDefault();
     fetch("http://localhost:3000/user/login", {
@@ -27,9 +28,6 @@ handleSubmit = (e) => {
       .then((data) => {
         console.log(data)
         this.props.updateToken(data.sessionToken);
-        this.props.updateFirstName(data.firstName);
-   
-        // console.log(data.User.isAdmin);
         localStorage.setItem("firstName", data.user.firstName);
         localStorage.setItem("isAdmin", data.user.isAdmin);
       });

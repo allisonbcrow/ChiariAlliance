@@ -1,95 +1,79 @@
-// import React from 'react';
-// import MedicalCreate from './MedicalCreate.js'
-// import { Container, Row, Col } from 'reactstrap';
-// import MedicalTable from './MedicalTable.js'
-// import MedicalEdit from './MedicalEdit.js'
+import React from 'react';
+import MedicalCreate from './MedicalCreate.js';
+import { Container, Row, Col } from 'reactstrap';
+import MedicalTable from './MedicalTable.js'; 
+import MedicalEdit from './MedicalEdit.js';
 
-// class MedicalIndex extends React.Component {
+class MedicalIndex extends React.Component {
 
-//   constructor(props) {
-//     super(props)
-//     this.state = {
-//       medical: [], mine: [], user: [], updatePressed: false, medicalToUpdate: {}
-//     }
-//   }
+  constructor(props) {
+    super(props)
+    this.state = {
+      medical: [], mine: [], user: [], updatePressed: false, medicalToUpdate: {}, 
+    }
+  }
 
-//   componentWillMount() {
-//     this.fetchMedicalMine()
-//   }
+  componentWillMount() {
+    this.fetchMedicalMine()
+  }
 
-//   fetchMedicalMine = () => {
-//     fetch("http://localhost:3000/medical/mine", {
-//       method: 'GET',
-//       headers: new Headers({
-//         'Content-Type': 'application/json',
-//         'Authorization': this.props.token
-//       })
-//     })
-//     //   .then((res) => res.json())
-//     //   .then((feedData) => {
-//     //     this.setUpdatedMedical(feedData)
-//     //   })
-// //   }
+  fetchMedicalMine = () => {
+    let token = localStorage.getItem("token");
+    fetch("http://localhost:3000/medical/mine", {
+      method: 'GET',
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': token
+      })
+    })
+      .then((res) => res.json())
+      .then((feedData) => {
+        this.setState({ medical: feedData })
+        console.log(this.state.medical);
+      })
+  }
 
-// //   medicalUpdate = (event, daily) => {
-// //     fetch("http://localhost:3000/medical/update/id", {
-// //       method: 'PUT',
-// //       body: JSON.stringify({ id: this.id }),
-// //       headers: new Headers({
-// //         'Content-Type': 'application/json',
-// //         'Authorization': this.props.token
-// //       })
-// //     })
-// //     .then((res) => {
-// //       this.setState({ updatePressed: false })
-// //       this.fetchMedical()}
-// //     )}
-  
+  editMyMedical = (medical) => {
+      this.setState({
+          medicalToUpdate: medical
+      })
+  }
 
-// //   setUpdatedMedical = (event, medical) => {
-// //     this.setState({
-// //         medicalToUpdate: medical, 
-// //         updatePressed: true 
-// //     })
-// // }
+  updateOn = () => {
+    this.setState({
+       updatePressed: true
+    })
+  }
 
-// //  medicalDelete = (event) => {
-// //     fetch('http://localhost:3000/medical/delete/id', {
-// //       method: 'DELETE',
-// //       body: JSON.stringify({ log: { id: event.target.id } }),
-// //       headers: new Headers({
-// //         'Content-Type': 'application/json',
-// //         'Authorization': this.props.token
-// //       })
-// //     })
-// //     .then((res) => this.fetchDaily())
-//   }
+  updateOff = () => {
+    this.setState({
+        updatePressed: false
+    })
+  }
+ 
 
 
-//   render() {
-//     this.medical = this.state.medical.length >= 1 ?    //1
-//     //2 
-//     <MedicalTable daily={this.state.medical} //3
-//      delete={this.medicalDelete} update={this.setUpdatedMedical} /> : <h2>Track your medical information</h2>
-//      return (
-//         <Container>
-//           <Row>
-//             <Col md="3">
-//               <MedicalCreate token={this.props.token} updateMedicalArray={this.fetchMedical} />
-//             </Col>
-//             <Col md="9">
-//               <MedicalTable />
-//             </Col>
-//           </Row>
-//           <Col md="12">  
-//             {
-//               this.state.updatePressed ? <MedicalEdit t={this.state.updatePressed} update={this.medicalUpdate} medical={this.state.medicalToUpdate} /> //2
-//               : <div></div>
-//             }
-//           </Col>
-//         </Container>
-//       )
-//   }
-// }
+  render() {
+    
+     return (
+        <Container>
+          <Row>
+            <Col md="3">
+              <MedicalCreate token={this.props.token} updateMedicalArray={this.fetchMedicalMine} />
+            </Col>
+            <Col md="9">
+            <MedicalTable medical={this.state.medical} fetchMedicalMine={this.fetchMedicalMine.bind(this)} editMyMedical={this.editMyMedical.bind(this)} updateOn={this.updateOn.bind(this)} token={this.props.token} />
+            </Col>
+          </Row>
+          <Col md="12">  
+            {
+              this.state.updatePressed ? <MedicalEdit fetchMedicalMine={this.fetchMedicalMine.bind(this)} updatePressed={this.state.updatePressed} medicalToUpdate={this.state.medicalToUpdate} updateOff={this.updateOff.bind(this)} token={this.props.token} /> //2
+              : <div></div>
+            }
+          </Col>
+        </Container>
+      )
+  }
+}
 
-// export default MedicalIndex;
+export default MedicalIndex;

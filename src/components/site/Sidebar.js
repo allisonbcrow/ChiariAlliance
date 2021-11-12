@@ -2,6 +2,7 @@ import React from 'react'
 import Login from '../../auth/Login'
 import Register from '../../auth/Register'
 import DailyIndex from '../../daily/DailyIndex'
+import MedicalIndex from '../../medical/MedicalIndex'
 import Auth from '../../auth/Auth'
 import {
     Route,
@@ -14,14 +15,6 @@ import Resources from './Resources'
 
 const Sidebar = (props) =>{ 
 
-
-    const protectedDaily = () => {
-        return props.token === localStorage.getItem("token")  ? (
-            <DailyIndex clearToken={props.clearToken} token={props.token} />
-        ) : (
-          <Auth updateToken={props.updateToken} />
-        );
-      };
     
     return(
     
@@ -29,14 +22,19 @@ const Sidebar = (props) =>{
     <div className="sidebar">
         <div className="sidebar-route">
            <Switch>
-                {/* <Route exact path="/home"><Home /></Route> */}
+                <Route exact path="/"><Home /></Route>
                 <Route exact path="/resources"><Resources /></Route>
-                <Route exact path='/daily/mine'>{protectedDaily()}</Route>
-                <Route exact path='/daily/create'>{protectedDaily()}</Route>
+                {props.token === localStorage.getItem("token")? (
+                  <div>
+                    <Route exact path='/daily/mine'><DailyIndex/></Route>
+                    <Route exact path='/medical/mine'><MedicalIndex/></Route>
+                  </div>
+                ):(
+                  <></>
+                )}
                 <Route exact path='/login'><Login updateToken={props.updateToken} /></Route>
                 <Route exact path='/register'><Register updateToken={props.updateToken} /></Route>
-                {/* <Route exact path="/loggedInView">{protectedView()}</Route> */}
-                <Route exact path="/"><Home /></Route>
+
            </Switch>
         </div>
     </div>

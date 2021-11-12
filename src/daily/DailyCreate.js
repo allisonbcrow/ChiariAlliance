@@ -5,14 +5,14 @@ class DailyCreate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-        id: '',
+      date: "",
         food: "",
-        water: 0,
-        sleep: 0,
+        water: "",
+        sleep: "",
         mood: "",
-        stressLevel: 0,
+        stressLevel: "",
         exercise: "",
-        painLevel: 0,
+        painLevel: "",
         other: "",
     };
   }
@@ -25,7 +25,6 @@ class DailyCreate extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    console.log("dailycreate");
     fetch('http://localhost:3000/daily/create', {
       method: "POST",
       body: JSON.stringify({daily: this.state }),
@@ -37,20 +36,20 @@ class DailyCreate extends Component {
       .then((res) => res.json())
       .then((logData) => {
           console.log(logData);
-        // this.props.updateDailyArray();
         this.setState({
-                id: '',
+          date: "",
               food: "",
-              water: 0,
-              sleep: 0,
+              water: "",
+              sleep: "",
               mood: "",
-              stressLevel: 0,
+              stressLevel: "",
               exercise: "",
-              painLevel: 0,
+              painLevel: "",
               other: "",
             
           }
         );
+        this.props.updateDailyArray()
       });
   };
 
@@ -58,8 +57,20 @@ class DailyCreate extends Component {
     return (
       <div>
         <h3>Daily Health Log</h3>
+        <p>Track your everyday information to help document important trends in your daily routine. </p>
         <hr />
         <Form onSubmit={this.handleSubmit}>
+        <FormGroup>
+            <Label for="date">Date</Label>
+            <Input
+              id="date"
+              type="date"
+              name="date"
+              value={this.state.date}
+              placeholder="Enter date here"
+              onChange={this.handleChange}
+            />
+          </FormGroup>
           <FormGroup>
             <Label for="food">Food</Label>
             <Input
@@ -113,13 +124,13 @@ class DailyCreate extends Component {
             </Input>
           </FormGroup>
           <FormGroup>
-            <Label for="stress level">Stress Level</Label>
+            <Label for="stressLevel">Stress Level</Label>
             <Input
               type="select"
-              name="stress level"
-              id="stress level"
+              name="stressLevel"
+              id="stressLevel"
               onChange={this.handleChange}
-              placeholder="Select your stress level"
+              placeholder="Select your stress"
             >
               <option></option>
               <option value="0">0</option>
@@ -142,13 +153,13 @@ class DailyCreate extends Component {
             />
           </FormGroup>
           <FormGroup>
-            <Label for="pain level">Pain Level</Label>
+            <Label for="painLevel">Pain Level</Label>
             <Input
               type="select"
-              name="pain level"
-              id="pain level"
+              name="painLevel"
+              id="painLevel"
               onChange={this.handleChange}
-              placeholder="Select your pain level"
+              placeholder="Select your pain"
             >
               <option></option>
               <option value="0">0</option>

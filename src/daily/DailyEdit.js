@@ -10,64 +10,81 @@ import {
   ModalBody,
 } from "reactstrap";
 
+
 class DailyEdit extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-        id: '',
-      food: "",
-      water: 0,
-      sleep: 0,
-      mood: "",
-      stressLevel: 0,
-      exercise: "",
-      painLevel: 0,
-      other: "",
+      editDate: this.props.dailyToUpdate.date,
+      editFood: this.props.dailyToUpdate.food,
+      editWater: this.props.dailyToUpdate.water,
+      editSleep: this.props.dailyToUpdate.sleep,
+      editMood: this.props.dailyToUpdate.mood,
+      editStressLevel: this.props.dailyToUpdate.stressLevel,
+      editExercise: this.props.dailyToUpdate.exercise,
+      editPainLevel: this.props.dailyToUpdate.painLevel,
+      editOther: this.props.dailyToUpdate.other,
     };
   }
-  componentWillMount() {
-    this.setState({
-        id: this.state.id,
-      food: this.state.food,
-      water: this.state.water,
-      sleep: this.state.sleep,
-      mood: this.state.mood,
-      stressLevel: this.state.stressLevel,
-      exercise: this.state.exercise,
-      painLevel: this.state.painLevel,
-      other: this.state.other,
-    });
-  }
 
-
-  handleChange = (event) => {
-    this.setState({
-      [event.target.name]: event.target.value,
-    });
-  };
-
-  handleSubmit = (event) => {
-    event.preventDefault();
-    this.props.update(event, this.state);
-  };
-
+  dailyUpdate = (event, daily) => {
+    console.log(this.props.token)
+     event.preventDefault();
+    fetch(`http://localhost:3000/daily/update/${this.props.dailyToUpdate.id}`, {
+      method: 'PUT',
+      body: JSON.stringify({ 
+          daily: {
+            date: this.state.editDate,
+              food: this.state.editFood,
+              water: this.state.editWater,
+              sleep: this.state.editSleep,
+              mood: this.state.editMood,
+              stressLevel: this.state.editStressLevel,
+              exercise: this.state.editExercise,
+              painLevel: this.state.editPainLevel,
+              other: this.state.editOther 
+          }
+    }),
+      headers: new Headers({
+        'Content-Type': 'application/json',
+        'Authorization': this.props.token
+      })
+    })
+    .then(() => {
+        this.props.updateOff();
+        this.props.fetchDaily();
+    })
+}
+  
+  
   render() {
     return (
       <div>
         <Modal isOpen={true}>
           <ModalHeader>Log Your Daily Tracker</ModalHeader>
           <ModalBody>
-            <Form onSubmit={this.handleSubmit}>
+            <Form onSubmit={this.dailyUpdate}>
+            <FormGroup>
+                <Label for="date">Date</Label>
+                <Input
+                  id="date"
+                  type="date"
+                  name="date"
+                  value={this.state.editDate}
+                  placeholder="Enter here"
+                  onChange={e => this.setState({editDate: e.target.value})}
+                />
+              </FormGroup>
               <FormGroup>
                 <Label for="food">Food</Label>
                 <Input
                   id="food"
                   type="text"
                   name="food"
-                  value={this.state.food}
+                  value={this.state.editFood}
                   placeholder="Enter here"
-                  onChange={this.handleChange}
+                  onChange={e => this.setState({editFood: e.target.value})}
                 />
               </FormGroup>
               <FormGroup>
@@ -76,9 +93,9 @@ class DailyEdit extends React.Component {
                   id="water"
                   type="text"
                   name="water"
-                  value={this.state.water}
+                  value={this.state.editWater}
                   placeholder="Enter here in oz"
-                  onChange={this.handleChange}
+                  onChange={e => this.setState({editWater: e.target.value})}
                 />
               </FormGroup>
               <FormGroup>
@@ -87,9 +104,9 @@ class DailyEdit extends React.Component {
                   id="sleep"
                   type="text"
                   name="sleep"
-                  value={this.state.sleep}
+                  value={this.state.editSleep}
                   placeholder="Enter here in hrs"
-                  onChange={this.handleChange}
+                  onChange={e => this.setState({editSleep: e.target.value})}
                 />
               </FormGroup>
               <FormGroup>
@@ -98,11 +115,11 @@ class DailyEdit extends React.Component {
                   type="select"
                   name="mood"
                   id="mood"
-                  onChange={this.handleChange}
+                  onChange={e => this.setState({editMood: e.target.value})}
                   placeholder="Select your mood"
                 >
-                  <option></option>
-                  <option value="Happy">Happy</option>
+                <option></option>
+                <option value="Happy">Happy</option>
               <option value="Anxious">Anxious</option>
               <option value="Irritated">Irritated</option>
               <option value="Sad">Sad</option>
@@ -117,7 +134,7 @@ class DailyEdit extends React.Component {
                   type="select"
                   name="stress level"
                   id="stress level"
-                  onChange={this.handleChange}
+                  onChange={e => this.setState({editStressLevel: e.target.value})}
                   placeholder="Select your stress level"
                 >
                   <option></option>
@@ -135,9 +152,9 @@ class DailyEdit extends React.Component {
                   id="exercise"
                   type="text"
                   name="exercise"
-                  value={this.state.exercise}
+                  value={this.state.editExercise}
                   placeholder="Enter exercise"
-                  onChange={this.handleChange}
+                  onChange={e => this.setState({editExercise: e.target.value})}
                 />
               </FormGroup>
               <FormGroup>
@@ -146,7 +163,7 @@ class DailyEdit extends React.Component {
                   type="select"
                   name="pain level"
                   id="pain level"
-                  onChange={this.handleChange}
+                  onChange={e => this.setState({editPainLevel: e.target.value})}
                   placeholder="Select your pain level"
                 >
                   <option></option>
@@ -164,12 +181,13 @@ class DailyEdit extends React.Component {
                   id="other"
                   type="text"
                   name="other"
-                  value={this.state.other}
+                  value={this.state.editOther}
                   placeholder="Enter other information"
-                  onChange={this.handleChange}
+                  onChange={e => this.setState({editOther: e.target.value})}
                 />
               </FormGroup>
-              <Button type="submit" color="primary">
+              <Button type="submit" color="primary"
+              sx={{ p: 2, border: '1px dashed grey' }}>
                 {" "}
                 Submit{" "}
               </Button>
