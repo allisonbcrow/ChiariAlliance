@@ -50,7 +50,7 @@ constructor(props){
 
 render() {
   return (
-    <div>
+    <div className="div">
     <h1>Sign Up</h1>
     <Form onSubmit={this.handleSubmit}>
     <FormGroup>

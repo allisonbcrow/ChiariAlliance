@@ -23,7 +23,8 @@ const MedicalTable = (props) => {
             return (
                 <tr key={index}>
                     <th scope="row">{medical.id}</th>
-                    <td>{medical.date}</td>
+                    {/* <td>{medical.date}</td> */}
+                    <td>{medical.updatedAt}</td>
                     <td>{medical.medicalConditions}</td>
                     <td>{medical.previousSurgeries}</td>
                     <td>{medical.previousHospitalizations}</td>
@@ -33,7 +34,7 @@ const MedicalTable = (props) => {
                         <td>{medical.weight}</td>
                             <td>{medical.other}</td>
                     <td>
-                        <Button id={medical.id} onClick={() => medicalDelete(medical)} color="danger">Delete</Button>|
+                        <Button id={medical.id} onClick={() => medicalDelete(medical)} color="danger">Delete</Button>
                         <Button id={medical.id} onClick={() => {props.editMyMedical(medical); props.updateOn()}} color="warning">Update</Button>
                     </td>
                 </tr>

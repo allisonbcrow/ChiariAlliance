@@ -5,7 +5,7 @@ class DailyCreate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: "",
+      // date: "",
         food: "",
         water: "",
         sleep: "",
@@ -37,7 +37,7 @@ class DailyCreate extends Component {
       .then((logData) => {
           console.log(logData);
         this.setState({
-          date: "",
+          // date: "",
               food: "",
               water: "",
               sleep: "",
@@ -60,7 +60,7 @@ class DailyCreate extends Component {
         <p>Track your everyday information to help document important trends in your daily routine. </p>
         <hr />
         <Form onSubmit={this.handleSubmit}>
-        <FormGroup>
+        {/* <FormGroup>
             <Label for="date">Date</Label>
             <Input
               id="date"
@@ -70,7 +70,7 @@ class DailyCreate extends Component {
               placeholder="Enter date here"
               onChange={this.handleChange}
             />
-          </FormGroup>
+          </FormGroup> */}
           <FormGroup>
             <Label for="food">Food</Label>
             <Input

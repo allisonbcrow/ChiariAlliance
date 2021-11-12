@@ -35,7 +35,7 @@ handleSubmit = (e) => {
 
   render() {
   return(
-    <div>
+    <div className="div">
         <h1>Login</h1>
         <Form onSubmit={this.handleSubmit}>
         <FormGroup>

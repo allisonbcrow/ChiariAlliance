@@ -2,7 +2,7 @@ import React from 'react';
 
 const Resources = () => {
     return (
-        <div className="main">
+        <div className="div">
             <div className="mainDiv">
                 <h1>Chiari Resources</h1>
                 <p>Below are some useful resources for those wanting to learn more or find support!</p>

@@ -29,7 +29,7 @@ footer p {
 
 /* main */
 .main {
-  background-image: url("C:\Users\13176\Desktop\WD89Red\ChiariAlliance\red-badge-client-main\chiari-alliance\src\purplebackground.jpeg");
+  background-image: url("C:\Users\13176\Desktop\WD89Red\ChiariAlliance\red-badge-client-main\chiari-alliance\src\purplebackground.jpeg")!;
   background-repeat: repeat-y;
   background-size: 110%;
   background-position: center;
@@ -39,8 +39,11 @@ footer p {
 }
 
 header {
-margin: 7em;
+margin-bottom: 9em;
+
 }
+
+
 
 
 button.nav-button.btn.btn-primary {
@@ -92,7 +95,7 @@ h1 {
   
 }
 
-h3 {
+h3, h2 {
   font-family: 'Corben', cursive;
   text-align: center;
   color: #C55FFC;
@@ -100,20 +103,20 @@ h3 {
 }
 
 a:link, a:visited  {
-  font-family: 'Corben', cursive;
+  font-family: 'Patrick Hand', cursive;
   text-align: center;
-  text-decoration: none;
-  color: #C55FFC;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+   color: black;
+   text-decoration: none;
+   background-color: #ffffff6d;
 }
 
 
 a:hover {
-  font-family: 'Corben', cursive;
-  text-align: center;
+  font-family: 'Patrick Hand', cursive;
+ text-align: center;
+  color: black;
   text-decoration: none;
-  color: white;
-  text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
+  background-color: #ffffff6d;
 }
 
 label {
@@ -148,6 +151,7 @@ li {
   color: black;
   
   background-color: #ffffff6d;
+
 }
 
 ul {
@@ -155,8 +159,10 @@ ul {
  color: black;
  /* text-shadow: 1px 1px 2px #EFDCF9; */
  background-color: #ffffff6d;
+
  
 }
+
 
 
 div.form-group {
@@ -169,16 +175,17 @@ div.form-group {
 
 td {
   font-family: 'Patrick Hand', cursive;
-  text-align: center;
-  margin: auto;
+ text-align: center;
   color: black;
-  text-shadow: 1px 1px black;
+  text-decoration: none;
+  background-color: #c55ffc42;
 
 }
  tr {
    color: black;
    font-family: 'Patrick Hand', cursive;
    font-size: 100%;
+   background-color: #c55ffc5e;
  }
 
 th {
@@ -187,7 +194,7 @@ th {
   margin: auto;
   color: black;
   margin: auto;
-  background-color: #ffffff6d;
+  background-color: #C55FFC;
 }
 
 

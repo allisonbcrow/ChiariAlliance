@@ -15,7 +15,7 @@ class MedicalEdit extends React.Component {
     super(props);
 
     this.state = {
-     date: this.props.medicalToUpdate.date,
+    //  date: this.props.medicalToUpdate.date,
       medicalConditions: this.props.medicalToUpdate.medicalConditions,
       previousSurgeries: this.props.medicalToUpdate.previousSurgeries,
       previousHospitalizations: this.props.medicalToUpdate.previousHospitalizations,
@@ -34,7 +34,7 @@ class MedicalEdit extends React.Component {
       method: 'PUT',
       body: JSON.stringify({ 
           medical: {
-            date: this.state.editDate,
+            // date: this.state.editDate,
             medicalConditions: this.state.editMedicalConditions,
             previousSurgeries: this.state.editPreviousSurgeries,
             previousHospitalizations: this.state.editPreviousHospitalizations,
@@ -64,7 +64,7 @@ class MedicalEdit extends React.Component {
           <ModalHeader>Log Your Medical Tracker</ModalHeader>
           <ModalBody>
           <Form onSubmit={this.medicalUpdate}>
-          <FormGroup>
+          {/* <FormGroup>
             <Label for="date">Date</Label>
             <Input
               id="date"
@@ -74,7 +74,7 @@ class MedicalEdit extends React.Component {
               placeholder="Enter here"
               onChange={e => this.setState({editDate: e.target.value})}
             />
-          </FormGroup>
+          </FormGroup> */}
           <FormGroup>
             <Label for="medicalConditions">Medical Conditions</Label>
             <Input

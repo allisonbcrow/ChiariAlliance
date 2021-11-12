@@ -16,7 +16,7 @@ class DailyEdit extends React.Component {
     super(props);
 
     this.state = {
-      editDate: this.props.dailyToUpdate.date,
+      // editDate: this.props.dailyToUpdate.date,
       editFood: this.props.dailyToUpdate.food,
       editWater: this.props.dailyToUpdate.water,
       editSleep: this.props.dailyToUpdate.sleep,
@@ -35,7 +35,7 @@ class DailyEdit extends React.Component {
       method: 'PUT',
       body: JSON.stringify({ 
           daily: {
-            date: this.state.editDate,
+            // date: this.state.editDate,
               food: this.state.editFood,
               water: this.state.editWater,
               sleep: this.state.editSleep,
@@ -65,7 +65,7 @@ class DailyEdit extends React.Component {
           <ModalHeader>Log Your Daily Tracker</ModalHeader>
           <ModalBody>
             <Form onSubmit={this.dailyUpdate}>
-            <FormGroup>
+            {/* <FormGroup>
                 <Label for="date">Date</Label>
                 <Input
                   id="date"
@@ -75,7 +75,7 @@ class DailyEdit extends React.Component {
                   placeholder="Enter here"
                   onChange={e => this.setState({editDate: e.target.value})}
                 />
-              </FormGroup>
+              </FormGroup> */}
               <FormGroup>
                 <Label for="food">Food</Label>
                 <Input

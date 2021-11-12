@@ -4,7 +4,7 @@ import React from "react";
 const Home = (props) => {
   return (
    
-    <div className="main">
+    <div className="div">
       <div className="mainDiv">
         <h1>Welcome to Chiari Alliance</h1>
 
@@ -16,7 +16,8 @@ const Home = (props) => {
         </p>
         <p> Register or Login for a tracker to be able to keep records of your daily routine (water, exercise, mood, etc) and your medical information (medications, surgeries, allergies, etc.) </p>     
         <hr />
-        <h1>key-ar-ee mal-for-may-shn</h1>
+        <h2>Pronounced</h2>
+        <h3>key-ar-ee mal-for-may-shn</h3>
         <p>Chiari Malformation is a serious neurological disorder where the bottom part of the brain, the cerebellum, descends out of the skull and crowds the spinal cord, putting pressure on both the brain and spine and causing many symptoms.</p>
         <h3>Symptoms</h3>
         <ul>

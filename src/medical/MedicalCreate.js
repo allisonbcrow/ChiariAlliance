@@ -5,7 +5,7 @@ class MedicalCreate extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      date: '',
+      // date: '',
       medicalConditions: '',
       previousSurgeries: '',
       previousHospitalizations: '',
@@ -37,7 +37,7 @@ class MedicalCreate extends Component {
       .then((logData) => {
           console.log(logData);
         this.setState({
-          date: '',
+          // date: '',
           medicalConditions: '',
           previousSurgeries: '',
           previousHospitalizations: '',
@@ -59,7 +59,7 @@ class MedicalCreate extends Component {
         <p> Track your important medical information. When you need it, it'll be easy to find all in one place! </p>
         <hr />
         <Form onSubmit={this.handleSubmit}>
-        <FormGroup>
+        {/* <FormGroup>
             <Label for="date">Date</Label>
             <Input
               id="date"
@@ -69,7 +69,7 @@ class MedicalCreate extends Component {
               placeholder="Enter here"
               onChange={this.handleChange}
             />
-             </FormGroup>
+             </FormGroup> */}
           <FormGroup>
             <Label for="medicalConditions">Medical Conditions</Label>
             <Input

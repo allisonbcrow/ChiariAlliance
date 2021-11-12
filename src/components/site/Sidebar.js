@@ -27,6 +27,7 @@ const Sidebar = (props) =>{
                 {props.token === localStorage.getItem("token")? (
                   <div>
                     <Route exact path='/daily/mine'><DailyIndex/></Route>
+                    <Route exact path='/daily/all'><DailyIndex/></Route>
                     <Route exact path='/medical/mine'><MedicalIndex/></Route>
                   </div>
                 ):(

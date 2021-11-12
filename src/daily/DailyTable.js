@@ -1,8 +1,18 @@
 import React from "react";
-import { Table, Button } from "reactstrap";
+import { Table, NavItem, Button } from "reactstrap";
+import { BrowserRouter as
+    Link, NavLink, useHistory
+} from 'react-router-dom';
+
 
 const DailyTable = (props) => {
   const firstName = localStorage.getItem("firstName");
+
+  const history = useHistory();
+
+  const routeChange = (path) =>{ 
+    history.push(path);
+  }
 
 
   const dailyDelete = (daily) => {
@@ -24,7 +34,8 @@ const DailyTable = (props) => {
       return (
         <tr key={index}>
           <th scope="row">{daily.id}</th>
-          <td>{daily.date}</td>
+          {/* <td>{daily.date}</td> */}
+          <td>{daily.updatedAt}</td>
           <td>{daily.food}</td>
           <td>{daily.water}</td>
           <td>{daily.sleep}</td>
@@ -61,6 +72,12 @@ const DailyTable = (props) => {
   return (
     <div>
       <h1>Welcome {firstName} !</h1>
+      <NavItem className="nav-right">
+              <Button onClick={()=>routeChange('/daily/mine')} color="primary" className="nav-button" >Personal View</Button>
+            </NavItem>
+            <NavItem className="nav-right">
+              <Button onClick={()=>routeChange('/daily/all')} color="primary" className="nav-button" >Admin View</Button>
+            </NavItem>
       <h3>Daily History</h3>
       <hr />
       <Table striped>
