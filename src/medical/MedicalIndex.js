@@ -3,7 +3,7 @@ import MedicalCreate from './MedicalCreate.js';
 import { Container, Row, Col } from 'reactstrap';
 import MedicalTable from './MedicalTable.js'; 
 import MedicalEdit from './MedicalEdit.js';
-import APIURL from './helpers/environment';
+import APIURL from '../helpers/environment';
 
 class MedicalIndex extends React.Component {
 

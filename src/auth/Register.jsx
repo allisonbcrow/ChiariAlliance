@@ -6,7 +6,7 @@ import {
   Label,
   Input
 } from "reactstrap";
-import APIURL from './helpers/environment';
+import APIURL from '../helpers/environment';
 
 export default class Register extends React.Component {
 constructor(props){

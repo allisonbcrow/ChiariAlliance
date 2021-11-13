@@ -3,7 +3,7 @@ import { Table, NavItem, Button } from "reactstrap";
 import { BrowserRouter as
     Link, NavLink, useHistory
 } from 'react-router-dom';
-import APIURL from './helpers/environment';
+import APIURL from '../helpers/environment';
 
 const DailyTable = (props) => {
   const firstName = localStorage.getItem("firstName");

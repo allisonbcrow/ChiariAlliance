@@ -9,7 +9,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
-import APIURL from './helpers/environment';
+import APIURL from '../helpers/environment';
 
 class MedicalEdit extends React.Component {
   constructor(props) {

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
-import APIURL from './helpers/environment';
+import APIURL from '../helpers/environment';
 
 class MedicalCreate extends Component {
   constructor(props) {

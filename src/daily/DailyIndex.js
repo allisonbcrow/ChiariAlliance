@@ -3,7 +3,7 @@ import DailyCreate from './DailyCreate.js'
 import { Container, Row, Col } from 'reactstrap';
 import DailyTable from './DailyTable.js';
 import DailyEdit from './DailyEdit.js';
-import APIURL from './helpers/environment';
+import APIURL from '../helpers/environment';
 
 class DailyIndex extends React.Component {
 
