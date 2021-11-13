@@ -1,5 +1,5 @@
 .div {
-  background-image: url("C:\Users\13176\Desktop\WD89Red\ChiariAlliance\red-badge-client-main\chiari-alliance\src\purplebackground.jpeg");
+  /* background-image: url("C:\Users\13176\Desktop\WD89Red\ChiariAlliance\red-badge-client-main\chiari-alliance\src\purplebackground.jpeg"); */
   background-repeat: repeat-y;
   background-size: 110%;
   background-position: center;
@@ -29,7 +29,7 @@ footer p {
 
 /* main */
 .main {
-  background-image: url("C:\Users\13176\Desktop\WD89Red\ChiariAlliance\red-badge-client-main\chiari-alliance\src\purplebackground.jpeg")!;
+  /* background-image: url("C:\Users\13176\Desktop\WD89Red\ChiariAlliance\red-badge-client-main\chiari-alliance\src\purplebackground.jpeg")!; */
   background-repeat: repeat-y;
   background-size: 110%;
   background-position: center;
