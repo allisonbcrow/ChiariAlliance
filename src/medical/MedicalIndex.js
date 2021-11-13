@@ -20,7 +20,7 @@ class MedicalIndex extends React.Component {
 
   fetchMedicalMine = () => {
     let token = localStorage.getItem("token");
-    fetch(`${APIURL}/medical/mine`, {
+    fetch(`${APIURL}medical/mine`, {
       method: 'GET',
       headers: new Headers({
         'Content-Type': 'application/json',

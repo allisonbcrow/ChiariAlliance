@@ -11,7 +11,7 @@ export default class Login extends React.Component {
     
 handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${APIURL}/user/login`, {
+    fetch(`${APIURL}user/login`, {
       method: "POST",
       body: JSON.stringify({ user: { email: this.state.email, password: this.state.password, isAdmin: this.state.isAdmin } }),
       headers: new Headers({

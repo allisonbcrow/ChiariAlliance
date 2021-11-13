@@ -26,7 +26,7 @@ class MedicalCreate extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch(`${APIURL}/medical/create`, {
+    fetch(`${APIURL}medical/create`, {
       method: "POST",
       body: JSON.stringify({medical: this.state }),
       headers: new Headers({

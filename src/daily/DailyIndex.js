@@ -37,7 +37,7 @@ class DailyIndex extends React.Component {
       })
   :
 
-    fetch(`${APIURL}/daily/mine`, {
+    fetch(`${APIURL}daily/mine`, {
       method: 'GET',
       headers: new Headers({
         'Content-Type': 'application/json',

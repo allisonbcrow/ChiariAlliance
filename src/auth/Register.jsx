@@ -18,7 +18,7 @@ constructor(props){
  handleSubmit = (e) => {
     e.preventDefault();
     console.log("zipperhead");
-    fetch(`${APIURL}/user/register`, {
+    fetch(`${APIURL}user/register`, {
       method: "POST",
       body: JSON.stringify({
         user: {

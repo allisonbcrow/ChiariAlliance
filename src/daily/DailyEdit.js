@@ -31,7 +31,7 @@ class DailyEdit extends React.Component {
   dailyUpdate = (event, daily) => {
     console.log(this.props.token)
      event.preventDefault();
-    fetch(`${APIURL}/daily/update/${this.props.dailyToUpdate.id}`, {
+    fetch(`${APIURL}daily/update/${this.props.dailyToUpdate.id}`, {
       method: 'PUT',
       body: JSON.stringify({ 
           daily: {

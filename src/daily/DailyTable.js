@@ -17,7 +17,7 @@ const DailyTable = (props) => {
 
   const dailyDelete = (daily) => {
     console.log(daily.id);
-    fetch(`${APIURL}/daily/delete/${daily.id}`, {
+    fetch(`${APIURL}daily/delete/${daily.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

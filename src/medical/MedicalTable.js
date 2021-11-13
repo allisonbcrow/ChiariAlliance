@@ -8,7 +8,7 @@ const MedicalTable = (props) => {
 
     const medicalDelete = (medical) => {
         console.log(medical.id)
-        fetch(`${APIURL}/medical/delete/${medical.id }`, {
+        fetch(`${APIURL}medical/delete/${medical.id }`, {
          method: "DELETE",
              headers: new Headers({
                "Content-Type": "application/json",

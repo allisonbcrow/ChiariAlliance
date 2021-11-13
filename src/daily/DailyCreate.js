@@ -27,7 +27,7 @@ class DailyCreate extends Component {
   handleSubmit = (event) => {
     console.log(this.props.token, "this is coming from DailyCreate");
     event.preventDefault();
-    fetch(`${APIURL}/daily/create`, {
+    fetch(`${APIURL}daily/create`, {
       method: "POST",
       body: JSON.stringify({daily: this.state }),
       headers: new Headers({

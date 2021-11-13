@@ -31,7 +31,7 @@ class MedicalEdit extends React.Component {
   medicalUpdate = (event, medical) => {
     console.log(this.props.token)
      event.preventDefault();
-    fetch(`${APIURL}/medical/update/${this.props.medicalToUpdate.id}`, {
+    fetch(`${APIURL}medical/update/${this.props.medicalToUpdate.id}`, {
       method: 'PUT',
       body: JSON.stringify({ 
           medical: {
