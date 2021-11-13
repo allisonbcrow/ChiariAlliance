@@ -3,6 +3,7 @@ import DailyCreate from './DailyCreate.js'
 import { Container, Row, Col } from 'reactstrap';
 import DailyTable from './DailyTable.js';
 import DailyEdit from './DailyEdit.js';
+import APIURL from './helpers/environment';
 
 class DailyIndex extends React.Component {
 
@@ -21,7 +22,7 @@ class DailyIndex extends React.Component {
   fetchDaily = () => {
     let token = localStorage.getItem("token");
     localStorage.getItem("isAdmin") === "true"
- ? fetch("http://localhost:3000/daily/all", {
+ ? fetch(`${APIURL}daily/all`, {
           method: "GET",
           headers: new Headers({
             "Content-Type": "application/json",
@@ -36,7 +37,7 @@ class DailyIndex extends React.Component {
       })
   :
 
-    fetch("http://localhost:3000/daily/mine", {
+    fetch(`${APIURL}/daily/mine`, {
       method: 'GET',
       headers: new Headers({
         'Content-Type': 'application/json',

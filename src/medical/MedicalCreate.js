@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import { Button, Form, FormGroup, Label, Input } from "reactstrap";
+import APIURL from './helpers/environment';
 
 class MedicalCreate extends Component {
   constructor(props) {
@@ -25,7 +26,7 @@ class MedicalCreate extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    fetch('http://localhost:3000/medical/create', {
+    fetch(`${APIURL}/medical/create`, {
       method: "POST",
       body: JSON.stringify({medical: this.state }),
       headers: new Headers({

@@ -6,6 +6,7 @@ import {
   Label,
   Input
 } from "reactstrap";
+import APIURL from './helpers/environment';
 
 export default class Register extends React.Component {
 constructor(props){
@@ -17,7 +18,7 @@ constructor(props){
  handleSubmit = (e) => {
     e.preventDefault();
     console.log("zipperhead");
-    fetch("http://localhost:3000/user/register", {
+    fetch(`${APIURL}/user/register`, {
       method: "POST",
       body: JSON.stringify({
         user: {

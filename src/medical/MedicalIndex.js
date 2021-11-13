@@ -3,6 +3,7 @@ import MedicalCreate from './MedicalCreate.js';
 import { Container, Row, Col } from 'reactstrap';
 import MedicalTable from './MedicalTable.js'; 
 import MedicalEdit from './MedicalEdit.js';
+import APIURL from './helpers/environment';
 
 class MedicalIndex extends React.Component {
 
@@ -19,7 +20,7 @@ class MedicalIndex extends React.Component {
 
   fetchMedicalMine = () => {
     let token = localStorage.getItem("token");
-    fetch("http://localhost:3000/medical/mine", {
+    fetch(`${APIURL}/medical/mine`, {
       method: 'GET',
       headers: new Headers({
         'Content-Type': 'application/json',

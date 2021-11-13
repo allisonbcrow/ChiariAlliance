@@ -9,7 +9,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
-
+import APIURL from './helpers/environment';
 
 class DailyEdit extends React.Component {
   constructor(props) {
@@ -31,7 +31,7 @@ class DailyEdit extends React.Component {
   dailyUpdate = (event, daily) => {
     console.log(this.props.token)
      event.preventDefault();
-    fetch(`http://localhost:3000/daily/update/${this.props.dailyToUpdate.id}`, {
+    fetch(`${APIURL}/daily/update/${this.props.dailyToUpdate.id}`, {
       method: 'PUT',
       body: JSON.stringify({ 
           daily: {

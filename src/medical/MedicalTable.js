@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table, Button } from 'reactstrap';
-
+import APIURL from './helpers/environment';
 
 const MedicalTable = (props) => {
 
@@ -8,7 +8,7 @@ const MedicalTable = (props) => {
 
     const medicalDelete = (medical) => {
         console.log(medical.id)
-        fetch(`http://localhost:3000/medical/delete/${medical.id }`, {
+        fetch(`${APIURL}/medical/delete/${medical.id }`, {
          method: "DELETE",
              headers: new Headers({
                "Content-Type": "application/json",

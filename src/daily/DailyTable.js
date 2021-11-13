@@ -3,7 +3,7 @@ import { Table, NavItem, Button } from "reactstrap";
 import { BrowserRouter as
     Link, NavLink, useHistory
 } from 'react-router-dom';
-
+import APIURL from './helpers/environment';
 
 const DailyTable = (props) => {
   const firstName = localStorage.getItem("firstName");
@@ -17,7 +17,7 @@ const DailyTable = (props) => {
 
   const dailyDelete = (daily) => {
     console.log(daily.id);
-    fetch(`http://localhost:3000/daily/delete/${daily.id}`, {
+    fetch(`${APIURL}/daily/delete/${daily.id}`, {
       method: "DELETE",
       headers: new Headers({
         "Content-Type": "application/json",

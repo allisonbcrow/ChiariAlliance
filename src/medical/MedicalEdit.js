@@ -9,6 +9,7 @@ import {
   ModalHeader,
   ModalBody,
 } from "reactstrap";
+import APIURL from './helpers/environment';
 
 class MedicalEdit extends React.Component {
   constructor(props) {
@@ -30,7 +31,7 @@ class MedicalEdit extends React.Component {
   medicalUpdate = (event, medical) => {
     console.log(this.props.token)
      event.preventDefault();
-    fetch(`http://localhost:3000/medical/update/${this.props.medicalToUpdate.id}`, {
+    fetch(`${APIURL}/medical/update/${this.props.medicalToUpdate.id}`, {
       method: 'PUT',
       body: JSON.stringify({ 
           medical: {
