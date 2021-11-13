@@ -10,6 +10,9 @@ switch (window.location.hostname) {
     case 'https://chiari-client.herokuapp.com/':
         // this is the full url of your deployed API
         APIURL = 'https://chiari-server.herokuapp.com/'
+        break;
+    default:
+        APIURL = 'https://chiari-server.herokuapp.com/'
 }
 
 export default APIURL;
