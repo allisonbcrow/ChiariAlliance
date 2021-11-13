@@ -14,7 +14,7 @@ import Home from './Home'
 import Resources from './Resources'
 
 const Sidebar = (props) =>{ 
-
+console.log(props.token)
     
     return(
     
@@ -26,9 +26,9 @@ const Sidebar = (props) =>{
                 <Route exact path="/resources"><Resources /></Route>
                 {props.token === localStorage.getItem("token")? (
                   <div>
-                    <Route exact path='/daily/mine'><DailyIndex/></Route>
-                    <Route exact path='/daily/all'><DailyIndex/></Route>
-                    <Route exact path='/medical/mine'><MedicalIndex/></Route>
+                    <Route exact path='/daily/mine'><DailyIndex token={props.token}/></Route>
+                    <Route exact path='/daily/all'><DailyIndex token={props.token}/></Route>
+                    <Route exact path='/medical/mine'><MedicalIndex token={props.token}/></Route>
                   </div>
                 ):(
                   <></>

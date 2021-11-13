@@ -20,11 +20,12 @@ const MedicalTable = (props) => {
 
     function medicalMapper() {
         return props.medical?.map((medical, index) => {
+            let d = new Date(medical.updatedAt);
             return (
                 <tr key={index}>
                     <th scope="row">{medical.id}</th>
                     {/* <td>{medical.date}</td> */}
-                    <td>{medical.updatedAt}</td>
+                    <td>{d.toLocaleDateString('en-US')}</td>
                     <td>{medical.medicalConditions}</td>
                     <td>{medical.previousSurgeries}</td>
                     <td>{medical.previousHospitalizations}</td>

@@ -203,7 +203,7 @@ button.btn.btn-primary:hover {
   background-color: rgb(255, 255, 255);
   border: 2px solid #C55FFC;
   color: #C55FFC;
-  margin: 1px;
+ /* margin: 1px; */
   text-align: center;
 }
 
@@ -215,5 +215,5 @@ button.btn.btn-primary {
   margin-left: 33%;
   margin-top: 10%;
 display: flex;
-  transition-duration: 0.2s;
+  /* transition-duration: 0.2s; */
 }

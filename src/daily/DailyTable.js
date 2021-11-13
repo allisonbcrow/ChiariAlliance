@@ -30,12 +30,13 @@ const DailyTable = (props) => {
 
   let dailyMapper = () => {
     return props.daily?.map((daily, index) => {
-
+     //   console.log(typeof daily.updatedAt);
+     let d = new Date(daily.updatedAt);
       return (
         <tr key={index}>
           <th scope="row">{daily.id}</th>
           {/* <td>{daily.date}</td> */}
-          <td>{daily.updatedAt}</td>
+          <td>{d.toLocaleDateString('en-US')}</td>
           <td>{daily.food}</td>
           <td>{daily.water}</td>
           <td>{daily.sleep}</td>

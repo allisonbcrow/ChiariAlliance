@@ -15,6 +15,7 @@ class DailyIndex extends React.Component {
 
 
   fetchDaily = () => {
+    console.log(this.props.token, "this is coming from dailyIndex");
     let token = localStorage.getItem("token");
     localStorage.getItem("isAdmin") === "true"
  ? fetch("http://localhost:3000/daily/all", {

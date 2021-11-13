@@ -24,6 +24,7 @@ class DailyCreate extends Component {
   };
 
   handleSubmit = (event) => {
+    console.log(this.props.token, "this is coming from DailyCreate");
     event.preventDefault();
     fetch('http://localhost:3000/daily/create', {
       method: "POST",
