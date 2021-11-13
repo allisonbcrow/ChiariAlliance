@@ -13,16 +13,19 @@ class DailyIndex extends React.Component {
     }
   }
 
+  componentWillMount() {
+    this.fetchDaily()
+  }
+
 
   fetchDaily = () => {
-    console.log(this.props.token, "this is coming from dailyIndex");
     let token = localStorage.getItem("token");
     localStorage.getItem("isAdmin") === "true"
  ? fetch("http://localhost:3000/daily/all", {
           method: "GET",
           headers: new Headers({
             "Content-Type": "application/json",
-            'Authorization': token,
+            'Authorization': token, 
           })
         })
     
@@ -46,11 +49,6 @@ class DailyIndex extends React.Component {
         console.log(this.state.daily);
       })
   };
-
-  componentWillMount() {
-    this.fetchDaily()
-  }
-
 
   editMyDaily = (daily) => {
       this.setState({
@@ -81,7 +79,7 @@ class DailyIndex extends React.Component {
               <DailyCreate token={this.props.token} updateDailyArray={this.fetchDaily} />
             </Col>
             <Col md="9">
-            <DailyTable daily={this.state.daily}  fetchDaily={this.fetchDaily.bind(this)} editMyDaily={this.editMyDaily.bind(this)} updateOn={this.updateOn.bind(this)} token={this.props.token} />
+            <DailyTable daily={this.state.daily} fetchDaily={this.fetchDaily.bind(this)} editMyDaily={this.editMyDaily.bind(this)} updateOn={this.updateOn.bind(this)} token={this.props.token} />
             </Col>
           </Row>
           <Col md="12">  

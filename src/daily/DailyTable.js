@@ -23,7 +23,7 @@ const DailyTable = (props) => {
         "Content-Type": "application/json",
         Authorization: props.token,
       }),
-    }).then(() => props.fetchDaily());
+    }).then(() => props.fetchDailyMine());
     console.log(props.fetchDaily());
   };
 
@@ -73,12 +73,9 @@ const DailyTable = (props) => {
   return (
     <div>
       <h1>Welcome {firstName} !</h1>
-      <NavItem className="nav-right">
-              <Button onClick={()=>routeChange('/daily/mine')} color="primary" className="nav-button" >Personal View</Button>
-            </NavItem>
-            <NavItem className="nav-right">
-              <Button onClick={()=>routeChange('/daily/all')} color="primary" className="nav-button" >Admin View</Button>
-            </NavItem>
+
+
+
       <h3>Daily History</h3>
       <hr />
       <Table striped>
@@ -99,8 +96,7 @@ const DailyTable = (props) => {
         </thead>
         <tbody>{dailyMapper()}</tbody>
       </Table>
-    </div>
-  );
-};
+      </div>
+)};
 
 export default DailyTable;

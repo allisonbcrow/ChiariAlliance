@@ -54,6 +54,7 @@ class DailyEdit extends React.Component {
     .then(() => {
         this.props.updateOff();
         this.props.fetchDaily();
+        this.props.fetchDailyMine();
     })
 }
   
